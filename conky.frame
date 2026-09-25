@@ -1,0 +1,32 @@
+conky.config = {
+    alignment = 'bottom_left',
+    background = false,  -- Disable Conky background to allow transparency
+    double_buffer = true,
+    update_interval = 1.0,
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=10',
+    override_utf8_locale = true,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    use_spacer = 'left',
+    minimum_width = 0, minimum_height = 0,
+    
+    -- Force transparency and keep it on top of other windows
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,  -- Full transparency (0-255)
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager,above',  -- Ensure it is above
+    
+    default_color = 'orange',
+    gap_x = 20,
+    gap_y = 20,
+};
+
+conky.text = [[
+${time %H:%M:%S} | wlan0: ${addr wlan0} | wlan1: ${addr wlan1}
+]];
+
